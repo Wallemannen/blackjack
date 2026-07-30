@@ -1,10 +1,381 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
+
 <head>
-    <title>Blackjack Analyzer</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blackjack Coach</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
-    <h1>Blackjack Analyzer</h1>
-    <p>Första versionen fungerar!</p>
+
+
+<div class="app">
+
+
+
+<header>
+
+<h1>♠ Blackjack Coach</h1>
+
+
+<select id="dealerRule">
+
+<option value="17">
+Dealer stannar på 17
+</option>
+
+
+<option value="soft17">
+Dealer tar på soft 17
+</option>
+
+
+</select>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- STATUS / RÅD -->
+
+
+<section class="box advice-box">
+
+
+<h2 id="gameStatus">
+DITT KORT
+</h2>
+
+
+<div id="advice">
+Välj första kort
+</div>
+
+
+<div id="percentage">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- DEALER -->
+
+
+<section id="dealerBox" class="box hand-box dim">
+
+
+<h3>
+DEALER
+</h3>
+
+
+<div id="dealerCards" class="cards-area"></div>
+
+
+<div id="dealerScore"></div>
+
+
+<div id="dealerResult"></div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SPELARE -->
+
+
+<section id="playerBox" class="box hand-box active">
+
+
+<h3>
+DIN HAND
+</h3>
+
+
+<div id="playerCards" class="cards-area"></div>
+
+
+<div id="playerScore"></div>
+
+
+<div id="playerResult"></div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SPLIT -->
+
+
+<section id="splitSection" class="split hidden">
+
+
+
+<div id="splitBox1" class="split-box">
+
+
+<h3>
+SPLIT 1
+</h3>
+
+
+<div id="split1Cards" class="cards-area"></div>
+
+
+<div id="split1Score"></div>
+
+
+<div id="split1Result"></div>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="splitBox2" class="split-box">
+
+
+<h3>
+SPLIT 2
+</h3>
+
+
+<div id="split2Cards" class="cards-area"></div>
+
+
+<div id="split2Score"></div>
+
+
+<div id="split2Result"></div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SLUTRESULTAT -->
+
+
+<section id="finalResult" class="box final hidden">
+
+
+<h3>
+RESULTAT
+</h3>
+
+
+<div id="resultText">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- AKTIONSKNAPPAR -->
+
+
+<section class="action-box">
+
+
+<button id="standBtn" onclick="stand()">
+
+STANNA
+
+</button>
+
+
+
+<button id="splitBtn" onclick="splitHand()" class="hidden">
+
+SPLIT
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- KORTVÄLJARE -->
+
+
+<section class="card-selector">
+
+
+<h3 id="cardTitle">
+
+DITT KORT
+
+</h3>
+
+
+
+
+<div class="buttons">
+
+
+<button onclick="addCard('A')">
+A♠
+</button>
+
+
+<button onclick="addCard('2')">
+2♠
+</button>
+
+
+<button onclick="addCard('3')">
+3♠
+</button>
+
+
+<button onclick="addCard('4')">
+4♠
+</button>
+
+
+<button onclick="addCard('5')">
+5♠
+</button>
+
+
+<button onclick="addCard('6')">
+6♠
+</button>
+
+
+<button onclick="addCard('7')">
+7♠
+</button>
+
+
+<button onclick="addCard('8')">
+8♠
+</button>
+
+
+<button onclick="addCard('9')">
+9♠
+</button>
+
+
+<button onclick="addCard('10')">
+10♠
+</button>
+
+
+<button onclick="addCard('Kn')">
+Kn♥
+</button>
+
+
+<button onclick="addCard('D')">
+D♦
+</button>
+
+
+<button onclick="addCard('K')">
+K♣
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<button class="new" onclick="newHand()">
+
+NY HAND
+
+</button>
+
+
+
+
+
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
